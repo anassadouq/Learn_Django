@@ -34,7 +34,7 @@ def loginPage(request):
             messages.error(request, 'Username OR password does not exit')
 
     context = {}
-    return render(request, 'base/login_register.html', context)
+    return render(request, 'base/login.html', context)
 
 def registerPage(request):
     form = UserCreationForm()
@@ -50,7 +50,7 @@ def registerPage(request):
         else:
             messages.error(request, 'An error occurred during registration')
 
-    return render(request, 'base/login_register.html', {'form': form})
+    return render(request, 'base/register.html', {'form': form})
 
 def logoutUser(request):
     logout(request)
