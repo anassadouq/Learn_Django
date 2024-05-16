@@ -7,13 +7,6 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import Room
 from .forms import RoomForm
 
-# Create your views here.
-
-rooms = [
-    {'id': 1, 'name':'Learn Python'},
-    {'id': 2, 'name':'Design with me'},
-    {'id': 3, 'name':'Frontend'},
-]
 
 def loginPage(request):
     if request.method == 'POST':
@@ -63,9 +56,6 @@ def home(request):
 
 def room(request, pk):
     room = Room.objects.get(id=pk)
-    for i in rooms:
-        if i['id'] == int(pk):
-            room = i
     context = {'room' : room}
     return render(request, 'base/room.html', context)
 

@@ -14,7 +14,6 @@ class Room(models.Model):
 
     name = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True)
-    # participants = 
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
 
@@ -34,8 +33,3 @@ class Message(models.Model):
 
     def _str_(self):
         return self.body[0:50]
-    
-# API
-class Item(models.Model):
-    name = models.CharField(max_length=200)
-    created = models.DateTimeField(auto_now_add=True)
